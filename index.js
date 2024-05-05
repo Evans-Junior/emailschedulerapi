@@ -15,7 +15,7 @@ app.use(bodyParser.json());
 app.use(cors());
 
 // Serve static files (e.g., HTML, CSS, JS) from a directory
-app.use(express.static('public'));
+// app.use(express.static('public'));
 
 // Endpoint to serve the HTML form
 app.get('/', async  (req, res) => {
