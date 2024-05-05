@@ -2,6 +2,7 @@ const express = require('express');
 const bodyParser = require('body-parser');
 const schedule = require('node-schedule');
 const nodemailer = require('nodemailer');
+const cors = require('cors'); // Import CORS middleware
 
 const app = express();
 const PORT = process.env.PORT || 3000;
@@ -9,6 +10,9 @@ const PORT = process.env.PORT || 3000;
 // Middleware to parse JSON request bodies
 app.use(bodyParser.urlencoded({ extended: true }));
 app.use(bodyParser.json());
+
+// Enable CORS to allow requests from other origins
+app.use(cors());
 
 // Serve static files (e.g., HTML, CSS, JS) from a directory
 app.use(express.static('public'));
