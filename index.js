@@ -20,7 +20,7 @@ app.use(cors());
 // Endpoint to serve the HTML form
 app.get('/', async  (req, res) => {
         // uncomment to test
-            // res.sendFile(__dirname + '/public/index.html');
+            res.sendFile(__dirname + '/public/index.html');
 });
 
 // Endpoint to handle form submission and schedule email
