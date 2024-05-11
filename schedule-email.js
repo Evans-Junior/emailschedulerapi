@@ -9,10 +9,10 @@ router.use(bodyParser.json());
 
 // Endpoint to receive scheduling request
 router.post('/', async (req, res) => {
-    const { to, date, message } = req.body;
+    const { to, date, message,subject } = req.body;
 
     // Validate request payload
-    if (!to || !date || !message) {
+    if (!to || !date || !message || !subject) {
         return res.status(400).json({ error: 'Missing required fields (to, date, message)' });
     }
 
@@ -36,7 +36,7 @@ router.post('/', async (req, res) => {
                 const mailOptions = {
                     from: 'ashesigymassociation@gmail.com',
                     to,
-                    subject: 'Scheduled Notification',
+                    subject,
                     text: message,
                 };
 
