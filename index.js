@@ -53,7 +53,7 @@ app.post('/', (req, res) => {
                 const mailOptions = {
                     from: 'ashesigymassociation@gmail.com',
                     to,
-                    subject: 'Scheduled Notification',
+                    subject,
                     text: message,
                 };
 
