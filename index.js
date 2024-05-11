@@ -25,11 +25,11 @@ app.get('/', async  (req, res) => {
 
 // Endpoint to handle form submission and schedule email
 app.post('/', (req, res) => {
-    const { to, date, message } = req.body;
+    const { to, date, message, subject } = req.body;
 
     // console.log('Email details:', { to, date, message });
     // Validate request payload
-    if (!to || !date || !message) {
+    if (!to || !date || !message || !subject) {
         return res.status(400).json({ error: 'Missing required fields (to, date, message)' });
     }
 
